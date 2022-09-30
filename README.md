@@ -10,4 +10,6 @@
 
 - Having a massive fanbase (comprised of MILLIONS across the country) creates a massive demand to want to know all the latest official information surrounding a certain AFL club
 
-- Creating this API provides (the fans, coteries, staff members, and more) an easily accessible way to retrieve any of this information at the touch of hand!
+- Creating this API provides (the fans, coteries, staff members, and more) an easily accessible way to retrieve any of this information at the touch of a button!
+
+## **_Database Chosen (PostgreSQl) and Why_**
