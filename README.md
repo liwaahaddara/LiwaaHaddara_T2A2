@@ -12,4 +12,9 @@
 
 - Creating this API provides (the fans, coteries, staff members, and more) an easily accessible way to retrieve any of this information at the touch of a button!
 
-## **_Database Chosen (PostgreSQl) and Why_**
+## **_Database Chosen (PostgreSQL) and Why_**
+
+## **_ERD (& ERD Modelling of the AFL API)_**
+
+![Image of the AFL API ERD](./docs/AFL%20API%20ERD.jpg)
+![Image of the modelling of the AFL API ERD](./docs/AFL%20API%20ERD%20Modelling.jpg)
