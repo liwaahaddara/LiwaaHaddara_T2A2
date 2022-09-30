@@ -18,3 +18,10 @@
 
 ![Image of the AFL API ERD](./docs/AFL%20API%20ERD.jpg)
 ![Image of the modelling of the AFL API ERD](./docs/AFL%20API%20ERD%20Modelling.jpg)
+
+## **_Mangament of the API Webserver Project_**
+
+- Using Trello cards to track the creation of the API (through planning, designing and code implementation documentation)
+
+- Task Allocation/Tracking Location:
+  [Trello Link](https://trello.com/invite/b/ayqBiMcF/902b058cdd87a611e0b692466e0d934b/t2a2-webserver-api-project)
