@@ -19,6 +19,34 @@
 ![Image of the AFL API ERD](./docs/AFL%20API%20ERD.jpg)
 ![Image of the modelling of the AFL API ERD](./docs/AFL%20API%20ERD%20Modelling.jpg)
 
+## **_AFL ERD Entity Relationships Explained_**
+
+- **CLUBS:**
+
+  - Each club is identified by its primary key (in this case, the _'club_id'_)
+
+  - Each club has a **1-to-many relationship** with **_PLAYERS,_** **_COACHES_** & **_DOCTORS_** (each club can have one or more player/coach/doctor, but each player/coach/doctor belongs to only a single club). A connection is established by having the _club_id_ be used as a foreign key attribute for each **PLAYERS**, **COACHES** and **DOCTORS** entry.
+
+- **COACHES:**
+
+  - Each coach has the primary identifier _'coach_id'_
+
+  - Each coach works for a single **CLUB** (uses the _'club_id'_ as a foreign key attribute to establish a connection)
+
+- **DOCTORS:**
+
+  - Each doctor has the primary identifier _'doctor_id'_
+
+  - Each doctor works for a single **CLUB** (uses the _'club_id'_ as a foreign key attribute to establish a connection)
+
+- **PLAYERS:**
+
+  - Each player entry is identified by its primary key attribute (the _'player_id_)
+
+  - Each player belongs to only one **CLUB** (connected through the foreign key attribute _'club_id'_)
+
+  - Each player also has a connection to the **STATS** entity (in this case, a _one-to-one relationship_). The **STATS** primary identifier (the _'set_of_stats_id'_ attribute) is used as a foreign key attribute in each **PLAYERS** entry (since each AFL player needs to have their own statistical data available for viewing)
+
 ## **_Mangament of the API Webserver Project_**
 
 - Using Trello cards to track the creation of the API (through planning, designing and code implementation documentation)
