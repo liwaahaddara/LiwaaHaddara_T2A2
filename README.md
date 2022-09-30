@@ -14,6 +14,18 @@
 
 ## **_Database Chosen (PostgreSQL) and Why_**
 
+- I've chosen to use **_PostgreSQL_** as a Database Managment System (DBMS), mainly due to the following:
+
+1. **Data Integrity:** It provides our data integrity through key constraints and regulation of added data, so we can forget about invalid records!
+
+2. **Disaster Recovery & Reliability:** Includes sophisticated replication options to keep our data safe.
+
+3. **Data Types:** Has support for all mainstream/needed data types, including _documents, geometry, primitives, structures, etc_
+
+4. **Performance:** Contains multiple features (such as powerful indexing methods, parallelisation of read queries, multiversion concurrency control, and many more) that boost and optimise the performance of a DBMS.
+
+5. **Text Search & Internalisation:** Supports international character sets, and so enables full-text search, thereby speeding up a finding process (since it also integrates case-sensitive and accent-insensitive collations)
+
 ## **_ERD (& ERD Modelling of the AFL API)_**
 
 ![Image of the AFL API ERD](./docs/AFL%20API%20ERD.jpg)
