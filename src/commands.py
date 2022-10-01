@@ -24,31 +24,19 @@ def drop_db():
     print('Tables dropped')
 
 
-# @db.cli.command('seed')
-# def seed_db():
+@db_commands.cli.command('seed')
+def seed_db():
+    # Create a new Club entry (in memory)
+    club1 = Club(
+        club_name="Western Bulldogs",
+        city_located="Melbourne",
+        year_established=1877
+    )
 
-#     # Create a new Card (in memory)
-#     card = Card(
-#         title="Start the project",
-#         description="Stage 1 - create db",
-#         status="To Do",
-#         priority="High",
-#         date=date.today()
-#     )
+    # Add the new club to the current transaction (in memory)
+    db.session.add(club1)
 
-#     # Add the new card to the current transaction (in memory)
-#     db.session.add(card)
+    # Commit the transaction to the physical DB
+    db.session.commit()
 
-#     admin = User(
-#         email="admin@email.com",
-#         # password = "12345678",
-#         password=bcrypt.generate_password_hash("12345678").decode("utf-8"),
-#         admin=True
-#     )
-
-#     db.session.add(admin)
-
-#     # Commit the transaction to the physical DB
-#     db.session.commit()
-
-#     print('Table seeded')
+    print('Table seeded')
