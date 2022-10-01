@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Blueprint, jsonify, request
 from main import db
 from models.clubs import Club
