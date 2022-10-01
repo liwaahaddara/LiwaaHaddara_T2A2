@@ -1,17 +1,23 @@
 from flask import Blueprint
 from main import db
+from models.clubs import Club
+from models.coaches import Coach
+from models.doctors import Doctor
+from models.players import Player
+from models.stats import Stat
+
 
 db_commands = Blueprint("db", __name__)
 
 
-@db.cli.command('create')
+@db_commands.cli.command('create')
 def create_db():
     # Tell SQLAlchemy to create all tables for all AFL models in the physical DB
     db.create_all()
     print('Tables created')
 
 
-@db.cli.command('drop')
+@db_commands.cli.command('drop')
 def drop_db():
     # Tell SQLAlchemy to drop all tables
     db.drop_all()
