@@ -29,8 +29,8 @@ def new_player():
     player = Player(
         p_first_name=player_fields["p_first_name"],
         p_last_name=player_fields["p_last_name"],
-        dob=player_fields["dob"],
-        salary=player_fields["salary"],
+        p_dob=player_fields["p_dob"],
+        p_salary=player_fields["p_salary"],
         club_id=player_fields["club_id"],
         set_of_stats_id=player_fields["set_of_stats_id"]
     )

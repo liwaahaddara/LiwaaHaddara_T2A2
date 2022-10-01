@@ -18,7 +18,7 @@ def get_coaches():
 @coaches.route("/<int:id>", methods=["GET"])
 def get_coach(id):
     # retrieve a specific coach from the database
-    coach = coach.query.get(id)
+    coach = Coach.query.get(id)
     result = coach_schema.dump(coach)
     return jsonify(result)
 

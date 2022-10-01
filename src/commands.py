@@ -5,6 +5,7 @@ from models.coaches import Coach
 from models.doctors import Doctor
 from models.players import Player
 from models.stats import Stat
+from datetime import date
 
 
 db_commands = Blueprint("db", __name__)
@@ -55,6 +56,18 @@ def seed_db():
     )
     # Add the new Doctor to the current transaction (in memory)
     db.session.add(doctor1)
+
+    # Create a new Player entry (in memory)
+    player1 = Player(
+        p_first_name="Marcus",
+        p_last_name="Bontempelli",
+        p_dob=date(day=24, month=11, year=1995),
+        p_salary=900000,
+        club_id=1,
+        set_of_stats_id=1
+    )
+    # Add the new Player to the current transaction (in memory)
+    db.session.add(player1)
 
     # Commit the transaction to the physical DB
     db.session.commit()

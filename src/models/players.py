@@ -11,7 +11,6 @@ class Player(db.Model):
     p_last_name = db.Column(db.String())
     p_dob = db.Column(db.Date())
     p_salary = db.Column(db.Integer)
-    years_served = db.Column(db.Integer)
     club_id = db.Column(db.Integer, db.ForeignKey("clubs.club_id"))
     set_of_stats_id = db.Column(
         db.Integer, db.ForeignKey("stats.set_of_stats_id"))

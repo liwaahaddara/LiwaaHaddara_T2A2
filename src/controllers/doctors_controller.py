@@ -18,7 +18,7 @@ def get_doctors():
 @doctors.route("/<int:id>", methods=["GET"])
 def get_doctor(id):
     # retrieve a specific doctor from the database
-    doctor = doctor.query.get(id)
+    doctor = Doctor.query.get(id)
     result = doctor_schema.dump(doctor)
     return jsonify(result)
 
