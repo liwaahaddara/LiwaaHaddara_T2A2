@@ -16,7 +16,7 @@ def get_doctors():
 
 
 @doctors.route("/<int:id>", methods=["GET"])
-def get_coach(id):
+def get_doctor(id):
     # retrieve a specific doctor from the database
     doctor = doctor.query.get(id)
     result = doctor_schema.dump(doctor)
@@ -24,7 +24,7 @@ def get_coach(id):
 
 
 @doctors.route("/", methods=["POST"])
-def new_club():
+def new_doctor():
     doctor_fields = doctor_schema.load(request.json)
     doctor = Doctor(
         d_first_name=doctor_fields["c_first_name"],

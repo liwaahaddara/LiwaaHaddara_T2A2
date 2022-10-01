@@ -24,7 +24,7 @@ def get_coach(id):
 
 
 @coaches.route("/", methods=["POST"])
-def new_club():
+def new_coach():
     coach_fields = coach_schema.load(request.json)
     coach = Coach(
         c_first_name=coach_fields["c_first_name"],
