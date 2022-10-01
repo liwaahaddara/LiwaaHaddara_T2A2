@@ -10,3 +10,7 @@ class Club(db.Model):
     club_name = db.Column(db.String())
     city_located = db.Column(db.String())
     year_established = db.Column(db.Integer)
+    coachesFK = db.relationship(
+        "Coach",
+        backref="clubs"
+    )
