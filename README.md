@@ -26,6 +26,24 @@
 
 5. **Text Search & Internalisation:** Supports international character sets, and so enables full-text search, thereby speeding up a finding process (since it also integrates case-sensitive and accent-insensitive collations)
 
+## **_Key Functionalities and Benefits when using an ORM_**
+
+- There are many popular ORM's (**Object Relational Mappers**) available for use when using a DBMS such as PostgreSQL in Python, including _Django, Storm, **SQLAlchemy** (the ORM I will be using for this project), and many more_
+
+- Plenty of benefits arrive at a programmer's fingertips with the use of an ORM (such as SQLAlchemy), since it practically hides away all the boilet plate tasks that come when creating a functional API, and that includes:
+
+  1. Connecting to a Database Server
+
+  2. Sanitising any potential parameters
+
+  3. Generating the required queries
+
+  4. Fetching data and (if necessary) serialising it
+
+  5. Localisation
+
+- As you can see, ORM's eliminate A LOT of potential hassles for us and have us focus primarily on creating a functioning database that works as intended
+
 ## **_ERD (& ERD Modelling of the AFL API)_**
 
 ![Image of the AFL API ERD](./docs/AFL%20API%20ERD.jpg)
