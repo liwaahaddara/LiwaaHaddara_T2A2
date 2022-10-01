@@ -31,7 +31,6 @@ def new_coach():
         c_last_name=coach_fields["c_last_name"],
         coach_type=coach_fields["coach_type"],
         years_coached=coach_fields["years_coached"],
-        years_coached=coach_fields["years_coached"],
         club_id=coach_fields["club_id"]
     )
 

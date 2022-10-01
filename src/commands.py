@@ -32,9 +32,29 @@ def seed_db():
         city_located="Melbourne",
         year_established=1877
     )
-
     # Add the new club to the current transaction (in memory)
     db.session.add(club1)
+
+    # Create a new Coach entry (in memory)
+    coach1 = Coach(
+        c_first_name="Luke",
+        c_last_name="Beveridge",
+        coach_type="Head Coach",
+        years_coached=8,
+        club_id=1
+    )
+    # Add the new coach to the current transaction (in memory)
+    db.session.add(coach1)
+
+    # Create a new Doctor entry (in memory)
+    doctor1 = Doctor(
+        d_first_name="Gary",
+        d_last_name="Zimmerman",
+        years_served=26,
+        club_id=1
+    )
+    # Add the new Doctor to the current transaction (in memory)
+    db.session.add(doctor1)
 
     # Commit the transaction to the physical DB
     db.session.commit()
