@@ -77,7 +77,7 @@
 
   - Each player also has a connection to the **STATS** entity (in this case, a _one-to-one relationship_). The **STATS** primary identifier (the _'set_of_stats_id'_ attribute) is used as a foreign key attribute in each **PLAYERS** entry (since each AFL player needs to have their own statistical data available for viewing)
 
-## **_Mangament of the API Webserver Project_**
+## **_Management of the API Webserver Project_**
 
 - Using Trello cards to track the creation of the API (through planning, designing and code implementation documentation)
 
