@@ -10,4 +10,4 @@ class Coach(db.Model):
     c_first_name = db.Column(db.String())
     c_last_name = db.Column(db.String())
     coach_type = db.Column(db.String())
-    year_coached = db.Column(db.Integer)
+    years_coached = db.Column(db.Integer)
