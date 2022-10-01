@@ -18,3 +18,7 @@ class Club(db.Model):
         "Doctor",
         backref="clubs"
     )
+    playersFK = db.relationship(
+        "Player",
+        backref="clubs"
+    )

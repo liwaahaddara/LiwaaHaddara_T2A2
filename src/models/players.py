@@ -12,3 +12,4 @@ class Player(db.Model):
     p_dob = db.Column(db.Date())
     p_salary = db.Column(db.Integer)
     years_served = db.Column(db.Integer)
+    club_id = db.Column(db.Integer, db.ForeignKey("clubs.club_id"))
