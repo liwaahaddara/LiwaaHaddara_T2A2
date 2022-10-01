@@ -63,8 +63,7 @@ def seed_db():
         p_last_name="Bontempelli",
         p_dob=date(day=24, month=11, year=1995),
         p_salary=900000,
-        club_id=1,
-        set_of_stats_id=1
+        club_id=1
     )
     # Add the new Player to the current transaction (in memory)
     db.session.add(player1)
@@ -76,7 +75,8 @@ def seed_db():
         position="Midfielder",
         avg_disposals=25,
         avg_tackles=4,
-        avg_marks=7
+        avg_marks=7,
+        player_id=1
     )
     # Add the new Player to the current transaction (in memory)
     db.session.add(stat1)

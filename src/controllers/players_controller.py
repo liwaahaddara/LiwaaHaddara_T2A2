@@ -35,8 +35,7 @@ def new_player():
         p_last_name=player_fields["p_last_name"],
         p_dob=player_fields["p_dob"],
         p_salary=player_fields["p_salary"],
-        club_id=player_fields["club_id"],
-        set_of_stats_id=player_fields["set_of_stats_id"]
+        club_id=player_fields["club_id"]
     )
 
     db.session.add(player)
@@ -61,7 +60,6 @@ def update_player(id):
     player.p_dob = player_fields["p_dob"]
     player.p_salary = player_fields["p_salary"]
     player.club_id = player_fields["club_id"]
-    player.set_of_stats_id = player_fields["set_of_stats_id"]
 
     # save changes in the database
     db.session.commit()

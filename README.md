@@ -75,7 +75,7 @@
 
   - Each player belongs to only one **CLUB** (connected through the foreign key attribute _'club_id'_)
 
-  - Each player also has a connection to the **STATS** entity (in this case, a _one-to-one relationship_). The **STATS** primary identifier (the _'set_of_stats_id'_ attribute) is used as a foreign key attribute in each **PLAYERS** entry (since each AFL player needs to have their own statistical data available for viewing)
+  - Each player also has a connection to the **STATS** entity (in this case, a _one-to-one relationship_). The **PLAYERS** primary identifier (the _'player_id'_ attribute) is used as a foreign key attribute in each **STATS** entry (since each AFL player needs to have their own statistical data available for viewing)
 
 ## **_Management of the API Webserver Project_**
 

@@ -3,8 +3,8 @@ from main import ma
 
 class StatSchema(ma.Schema):
     class Meta:
-        fields = ["set_of_stats_id", "games_played", "goals",
-                  "position", "avg_disposals", "avg_tackles", "avg_marks"]
+        fields = ["stats_id", "games_played", "goals",
+                  "position", "avg_disposals", "avg_tackles", "avg_marks", "player_id"]
 
 
 # a single stat schema

@@ -28,13 +28,14 @@ def get_stat(id):
 def new_stat():
     stat_fields = stat_schema.load(request.json)
     stat = Stat(
-        set_of_stats_id=stat_fields["set_of_stats_id"],
+        stats_id=stat_fields["stats_id"],
         games_played=stat_fields["games_played"],
         goals=stat_fields["goals"],
         position=stat_fields["position"],
         avg_disposals=stat_fields["avg_disposals"],
         avg_tackles=stat_fields["avg_tackles"],
-        avg_marks=stat_fields["avg_marks"]
+        avg_marks=stat_fields["avg_marks"],
+        player_id=stat_fields["player_id"]
     )
 
     db.session.add(stat)

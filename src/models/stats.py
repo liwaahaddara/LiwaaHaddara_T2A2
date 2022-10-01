@@ -6,14 +6,12 @@ class Stat(db.Model):
     __tablename__ = "stats"
 
     # setting the attributes of the Stat Entity
-    set_of_stats_id = db.Column(db.Integer, primary_key=True)
+    stats_id = db.Column(db.Integer, primary_key=True)
     games_played = db.Column(db.Integer)
     goals = db.Column(db.Integer)
     position = db.Column(db.String())
     avg_disposals = db.Column(db.Integer)
     avg_tackles = db.Column(db.Integer)
     avg_marks = db.Column(db.Integer)
-    playersFK = db.relationship(
-        "Player",
-        backref="stats"
-    )
+    player_id = db.Column(
+        db.Integer, db.ForeignKey("players.player_id"))
