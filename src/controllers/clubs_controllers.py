@@ -53,7 +53,7 @@ def update_club(id):
         return {"error": "club id not found in the database"}, 404
     # get the club details from the request
     club_fields = club_schema.load(request.json)
-    # upodate the values of the club
+    # update the values of the club
     club.club_name = club_fields["club_name"]
     club.city_located = club_fields["city_located"]
     club.year_established = club_fields["year_established"]

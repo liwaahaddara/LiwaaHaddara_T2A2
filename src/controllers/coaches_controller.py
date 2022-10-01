@@ -54,7 +54,7 @@ def update_coach(id):
         return {"error": "coach id not found in the database"}, 404
     # get the coach details from the request
     coach_fields = coach_schema.load(request.json)
-    # upodate the values of the coach
+    # update the values of the coach
     coach.c_first_name = coach_fields["c_first_name"]
     coach.c_last_name = coach_fields["c_last_name"]
     coach.coach_type = coach_fields["coach_type"]

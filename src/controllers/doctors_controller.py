@@ -19,10 +19,14 @@ def get_doctors():
 def get_doctor(id):
     # retrieve a specific doctor from the database
     doctor = Doctor.query.get(id)
+    # check if doctor exist in the database
+    if not doctor:
+        return {"error": "doctor id not found in the database"}, 404
     result = doctor_schema.dump(doctor)
     return jsonify(result)
 
 
+# Adding a new Doctor to the Database
 @doctors.route("/", methods=["POST"])
 def new_doctor():
     doctor_fields = doctor_schema.load(request.json)
@@ -37,3 +41,43 @@ def new_doctor():
     db.session.commit()
 
     return jsonify(doctor_schema.dump(doctor))
+
+
+# Updating the attributes of an exisiting Doctor
+@doctors.route("/<int:id>", methods=["PUT"])
+def update_doctor(id):
+    # find the doctor in the database
+    doctor = Doctor.query.get(id)
+    # check if doctor exist in the database
+    if not doctor:
+        return {"error": "doctor id not found in the database"}, 404
+    # get the doctor details from the request
+    doctor_fields = doctor_schema.load(request.json)
+    # update the values of the doctor
+    doctor.d_first_name = doctor_fields["d_first_name"]
+    doctor.d_last_name = doctor_fields["d_last_name"]
+    doctor.years_served = doctor_fields["years_served"]
+    doctor.club_id = doctor_fields["club_id"]
+
+    # save changes in the database
+    db.session.commit()
+
+    return jsonify(doctor_schema.dump(doctor)), 201
+
+
+# Deleting an exisiting Doctor from the database
+@doctors.route("/<int:id>", methods=["DELETE"])
+def delete_doctor(id):
+    # search doctor by id (primary key)
+    doctor = Doctor.query.get(id)
+
+    # check if we found a Doctor
+    if not doctor:
+        return {"error": "doctor_id not found"}
+
+    # delete the doctor from the database
+    db.session.delete(doctor)
+    # save the changes in the database
+    db.session.commit()
+
+    return {"message": "Doctor removed successfully"}
