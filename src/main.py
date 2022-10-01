@@ -1,8 +1,13 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
 
+def create_app():
+    # Create the flask app object
+    app = Flask(__name__)
 
-@app.route('/')
-def welcome():
-    return 'AFL API is currently under construction'
+    app.config.from_object("config.app_config")
+
+    db = SQLAlchemy(app)
+
+    return app
