@@ -13,3 +13,7 @@ class Stat(db.Model):
     avg_disposals = db.Column(db.Integer)
     avg_tackles = db.Column(db.Integer)
     avg_marks = db.Column(db.Integer)
+    playersFK = db.relationship(
+        "Player",
+        backref="stats"
+    )
