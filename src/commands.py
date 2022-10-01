@@ -69,6 +69,18 @@ def seed_db():
     # Add the new Player to the current transaction (in memory)
     db.session.add(player1)
 
+    # Create a new Stat entry (in memory)
+    stat1 = Stat(
+        games_played=191,
+        goals=178,
+        position="Midfielder",
+        avg_disposals=25,
+        avg_tackles=4,
+        avg_marks=7
+    )
+    # Add the new Player to the current transaction (in memory)
+    db.session.add(stat1)
+
     # Commit the transaction to the physical DB
     db.session.commit()
 
