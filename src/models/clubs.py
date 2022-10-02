@@ -12,13 +12,16 @@ class Club(db.Model):
     year_established = db.Column(db.Integer)
     coachesFK = db.relationship(
         "Coach",
-        backref="clubs"
+        backref="clubs",
+        cascade="all, delete"
     )
     doctorsFK = db.relationship(
         "Doctor",
-        backref="clubs"
+        backref="clubs",
+        cascade="all, delete"
     )
     playersFK = db.relationship(
         "Player",
-        backref="clubs"
+        backref="clubs",
+        cascade="all, delete"
     )

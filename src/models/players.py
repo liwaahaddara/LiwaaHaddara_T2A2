@@ -14,5 +14,6 @@ class Player(db.Model):
     club_id = db.Column(db.Integer, db.ForeignKey("clubs.club_id"))
     statsFK = db.relationship(
         "Stat",
-        backref="players"
+        backref="players",
+        cascade="all, delete"
     )
