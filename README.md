@@ -224,6 +224,28 @@
 
 - Otherwise it returns an error message saying that the provided 'id' parameter doesn't match any existing entries
 
+## **Third-party Services Used in the Webserver API**
+
+(NOTE: referring to the specific pip packages installed here and their purpose)
+
+### **_flask_**
+
+- Used the 'flask' module to install the following packages:
+  - Flask (used a microweb framework to create our App to run our dynamic routes, commands, etc)
+  - Blueprint
+  - request (used to load any provided user data in order to manipulate said data to our liking)
+  - jsonify (used to convert given user data into a JSON object so it can be formatted correctly for viewing, as JSON is an industry standard)
+
+### **_flask_sqlalchemy_**
+
+- Used to install the following packages:
+  - SQLALchemy (used as an ORM to connect us to our PostgreSQL database, complete the 'boiler-plate' tasks for us in the background)
+
+### **_flask_marshmallow_**
+
+- Used to install the following packages:
+  - Marshmallow (used to serialise our data, automatically create our primary_keys, and to design our schemas to be able to choose what we would like to display to the user)
+
 ## **_Management of the API Webserver Project_**
 
 - Using Trello cards to track the creation of the API (through planning, designing and code implementation documentation)
