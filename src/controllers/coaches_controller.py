@@ -12,7 +12,7 @@ def get_coaches():
     # retrieve all the coaches currently in the database
     coaches_list = Coach.query.all()
     result = coaches_schema.dump(coaches_list)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 @coaches.route("/<int:id>", methods=["GET"])
@@ -23,7 +23,7 @@ def get_coach(id):
     if not coach:
         return {"error": "coach id not found in the database"}, 404
     result = coach_schema.dump(coach)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 # Adding a new Coach to the Database
@@ -41,7 +41,7 @@ def new_coach():
     db.session.add(coach)
     db.session.commit()
 
-    return jsonify(coach_schema.dump(coach))
+    return jsonify(coach_schema.dump(coach)), 200
 
 
 # Updating the attributes of an exisiting Coach

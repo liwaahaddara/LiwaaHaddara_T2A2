@@ -12,7 +12,7 @@ def get_clubs():
     # retrieve all the clubs currently in the database
     clubs_list = Club.query.all()
     result = clubs_schema.dump(clubs_list)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 # Searching for a single, exisiting club in the database
@@ -24,7 +24,7 @@ def get_club(id):
     if not club:
         return {"error": "club id not found in the database"}, 404
     result = club_schema.dump(club)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 # Adding a new Club to the Database
@@ -40,7 +40,7 @@ def new_club():
     db.session.add(club)
     db.session.commit()
 
-    return jsonify(club_schema.dump(club))
+    return jsonify(club_schema.dump(club)), 200
 
 
 # Updating the attributes of an exisiting Club

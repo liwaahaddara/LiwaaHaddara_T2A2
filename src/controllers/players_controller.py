@@ -12,7 +12,7 @@ def get_players():
     # retrieve all the players currently in the database
     players_list = Player.query.all()
     result = players_schema.dump(players_list)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 @players.route("/<int:id>", methods=["GET"])
@@ -23,7 +23,7 @@ def get_player(id):
     if not player:
         return {"error": "player id not found in the database"}, 404
     result = player_schema.dump(player)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 # Adding a new Player to the Database
@@ -41,7 +41,7 @@ def new_player():
     db.session.add(player)
     db.session.commit()
 
-    return jsonify(player_schema.dump(player))
+    return jsonify(player_schema.dump(player)), 200
 
 
 # Updating the attributes of an exisiting Player

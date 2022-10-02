@@ -13,7 +13,7 @@ def get_stats():
     # retrieve all the stats currently in the database
     stats_list = Stat.query.all()
     result = stats_schema.dump(stats_list)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 @stats.route("/<int:id>", methods=["GET"])
@@ -24,7 +24,7 @@ def get_stat(id):
     if not stat:
         return {"error": "stat id not found in the database"}, 404
     result = stat_schema.dump(stat)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 # Adding a new Stats entry to the Database
@@ -44,7 +44,7 @@ def new_stat():
     db.session.add(stat)
     db.session.commit()
 
-    return jsonify(stat_schema.dump(stat))
+    return jsonify(stat_schema.dump(stat)), 200
 
 
 # Updating the attributes of an exisiting player's Stats

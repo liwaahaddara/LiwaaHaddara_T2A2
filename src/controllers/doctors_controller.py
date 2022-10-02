@@ -12,7 +12,7 @@ def get_doctors():
     # retrieve all the doctors currently in the database
     doctors_list = Doctor.query.all()
     result = doctors_schema.dump(doctors_list)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 @doctors.route("/<int:id>", methods=["GET"])
@@ -23,7 +23,7 @@ def get_doctor(id):
     if not doctor:
         return {"error": "doctor id not found in the database"}, 404
     result = doctor_schema.dump(doctor)
-    return jsonify(result)
+    return jsonify(result), 200
 
 
 # Adding a new Doctor to the Database
@@ -40,7 +40,7 @@ def new_doctor():
     db.session.add(doctor)
     db.session.commit()
 
-    return jsonify(doctor_schema.dump(doctor))
+    return jsonify(doctor_schema.dump(doctor)), 200
 
 
 # Updating the attributes of an exisiting Doctor
